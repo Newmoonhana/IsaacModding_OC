@@ -1,10 +1,10 @@
-local Rngesus = {}
+Rngesus = {}
 
 -- [변수]
 Rngesus.id = Isaac.GetItemIdByName('RNGesus')
 local DeathCertificateId = 628
 local diec_img = { "giantbook_RNGesus1.png", "giantbook_RNGesus2.png", "giantbook_RNGesus3.png", "giantbook_RNGesus4.png", "giantbook_RNGesus5.png", "giantbook_RNGesus6.png", "giantbook_RNGesus7.png", "giantbook_RNGesus8.png" } -- giantbook 이미지로 사용할 주사위 눈 이미지
-local dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 }
+Rngesus.dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 }
 local DICEMAX = 8	-- 다이스의 최댓값(테이블의 최댓값이 아닌 나올 수 있는 최대 크기의 수)
 
 -- [디버깅 변수]
@@ -13,7 +13,7 @@ local dice_table_text = ""
 -- NPC Update 함수
 function Rngesus:onPostInit(player)
 	if player:HasCollectible(Rngesus.id) then
-		dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 }
+		-- Rngesus.dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 }
 	end
 end
 mod:AddCallback( ModCallbacks.MC_POST_PLAYER_INIT, Rngesus.onPostInit)
@@ -26,11 +26,11 @@ function Rngesus:onUpdate(player)
 		local index = 0
 		if player:HasCollectible(Rngesus.id) then
 			dice_table_text = "dice table = { "
-			-- dice_table_text = dice_table_text .. table.concat(dice_table, ", ") -- 자동으로 구분자 포함 텍스트 대입인데 문제는 \n할 위치가 애매함
+			-- dice_table_text = dice_table_text .. table.concat(Rngesus.dice_table, ", ") -- 자동으로 구분자 포함 텍스트 대입인데 문제는 \n할 위치가 애매함
 
 			local dice_table_sum = { 0, 0, 0, 0, 0, 0, 0, 0 }
-			for index = 1, #dice_table do
-				dice_table_sum[dice_table[index]] = dice_table_sum[dice_table[index]] + 1
+			for index = 1, #(Rngesus.dice_table) do
+				dice_table_sum[Rngesus.dice_table[index]] = dice_table_sum[Rngesus.dice_table[index]] + 1
 			end
 			for index = 1, #dice_table_sum do
 				dice_table_text = dice_table_text .. tostring(index) .. "= " .. tostring(dice_table_sum[index])
@@ -67,9 +67,9 @@ function Rngesus:UseRNGesus(_Type, RNG, player)
 	
 	local seed = mod.myRNG:GetSeed();
 	seed = math.random(seed);
-	Isaac.DebugString("[Serpent]: max =  "..(dice_table[1]))
-	local dice_rng_Index = math.random(#dice_table) -- dice_table의 랜덤 인덱스 값
-	local dice_rng = dice_table[dice_rng_Index]
+	Isaac.DebugString("[Serpent]: max =  "..(Rngesus.dice_table[1]))
+	local dice_rng_Index = math.random(#(Rngesus.dice_table)) -- dice_table의 랜덤 인덱스 값
+	local dice_rng = Rngesus.dice_table[dice_rng_Index]
 	if dice_rng == 1 then -- Entity 전체 즉사(플레이어 포함)
 		for _, entity in pairs(entities) do
 			entity:Die()
@@ -127,7 +127,7 @@ function Rngesus:UseRNGesus(_Type, RNG, player)
 	end
 
 	if (mod:getRandomIntInclusive(1, dice_rng) == dice_rng) then -- 1/dice_rng의 확률로 테이블에 해당 값이 추가되어 해당 값이 나올 가능성이 높아진다(높은 숫자일 수록 테이블에 잘 안들어감으로써 밸런스패치)
-		table.insert(dice_table, dice_rng);
+		table.insert(Rngesus.dice_table, dice_rng);
 	end
 	GiantBookAPI.playGiantBook("Appear", diec_img[dice_rng], Color(0.2,0.5,0.5,1,0,0,0),Color(0.5,1,1,0.5,0,0,0),Color(0.2,0.5,0.5,0.8,0,0,0), false)
 end

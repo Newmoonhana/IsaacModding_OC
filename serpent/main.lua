@@ -85,3 +85,5 @@ include('script/characters/tserpent.lua')
 include('script/items/rngesus.lua')
 include('script/items/speed runner.lua')
 include('script/items/easteregg/dead cat.lua')
+
+include('script/savedata.lua')
