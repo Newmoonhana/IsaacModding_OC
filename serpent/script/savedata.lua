@@ -3,7 +3,6 @@ local json = require("json")
 local defaultSaveData = 
 {
 	debug_text = "None SaveData",
-	hasCostume_deadcat = { hasCostume = false }, -- serpent, tserpent
 	dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 } -- rngesus
 }
 
@@ -36,6 +35,8 @@ mod:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, mod.PreGameExit)
 function mod:PostGameStarted(isContinued)
 	if isContinued then
 		mod:ReadData()
+	else
+		Rngesus.dice_table = { 1,2,3,4,5,6,7,8 }
 	end
 end
 mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, mod.PostGameStarted)

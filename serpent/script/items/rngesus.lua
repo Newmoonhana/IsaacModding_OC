@@ -7,6 +7,8 @@ local diec_img = { "giantbook_RNGesus1.png", "giantbook_RNGesus2.png", "giantboo
 Rngesus.dice_table = { 1, 2, 3, 4, 5, 6, 7, 8 }
 local DICEMAX = 8	-- 다이스의 최댓값(테이블의 최댓값이 아닌 나올 수 있는 최대 크기의 수)
 
+SoundEffect.DiceRoll = Isaac.GetSoundIdByName("DiceRoll")
+
 -- [디버깅 변수]
 local dice_table_text = ""
 
@@ -59,30 +61,29 @@ mod:AddCallback( ModCallbacks.MC_POST_RENDER, Rngesus.onRender)
 function Rngesus:UseRNGesus(_Type, RNG, player)
 	local entities = Isaac:GetRoomEntities()
 	player:AnimateCollectible(Rngesus.id, "UseItem", "PlayerPickupSparkle")
-
-	--if sound then
-	--	local sfx = SFXManager()
-	--	sfx:Play(sound, 1, 0, false, 1)
-	--end
 	
+	mod.SFX:Play(SoundEffect.DiceRoll)
+
 	local seed = mod.myRNG:GetSeed();
 	seed = math.random(seed);
-	Isaac.DebugString("[Serpent]: max =  "..(Rngesus.dice_table[1]))
+	Isaac.DebugString("[Serpent]: max =  "..#(Rngesus.dice_table))
 	local dice_rng_Index = math.random(#(Rngesus.dice_table)) -- dice_table의 랜덤 인덱스 값
+	Isaac.DebugString("[Serpent]: random =  "..dice_rng_Index)
 	local dice_rng = Rngesus.dice_table[dice_rng_Index]
 	if dice_rng == 1 then -- Entity 전체 즉사(플레이어 포함)
 		for _, entity in pairs(entities) do
 			entity:Die()
 		end
-	elseif dice_rng == 2 then -- 랜덤 저주
+	elseif dice_rng == 2 then -- 랜덤 저주 & 방 안 랜덤 좌표 워프
 		local curse_index = mod:getRandomIntInclusive(1, 6)
 		mod.level:AddCurse(1 << curse_index, true)
-	elseif dice_rng == 3 then -- 방 안 랜덤 좌표 워프
 		player:AnimateTeleport(true)
 		local x = mod:getRandomArbitrary(0, mod.room:GetBottomRightPos().X)
 		local y = mod:getRandomArbitrary(0, mod.room:GetBottomRightPos().Y)
 		player.Position = Vector(x, y)
 		-- game:ChangeRoom(level:GetPreviousRoomIndex()) -- 방 워프도 고려해봤으나 이동과 동시에 죽는 버그때문에 보류
+	elseif dice_rng == 3 then -- 에러방 워프
+		Isaac.ExecuteCommand("goto s.error.#")
 	elseif dice_rng == 4 then -- 챔피언이 아닌 모든 적 챔피언 화
 		for _, entity in pairs(entities) do
 			if entity:IsEnemy() then

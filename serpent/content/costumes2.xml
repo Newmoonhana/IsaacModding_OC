@@ -1,6 +1,6 @@
 ﻿<costumes anm2root="gfx/characters/">
 	<costume anm2path="serpenthair.anm2" type="none" priority="0" />
 	<costume anm2path="tainted_serpenthair.anm2" type="none" priority="0" />
-	<costume anm2path="deadcat.anm2" type="none" priority="0" />
-	<costume anm2path="deadcathair.anm2" type="none" priority="0" />
+	<costume anm2path="cb_serpent.anm2" type="none" priority="0" />
+	<costume anm2path="cb_serpenthair.anm2" type="none" priority="0" />
 </costumes>

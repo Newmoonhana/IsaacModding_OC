@@ -1,0 +1,8 @@
+<sounds root="sfx/">
+	<sound name="DiceRoll">
+		<sample weight="1" path="8 Bit - Level Pass.wav" />
+	</sound>
+	<sound name="CatInTheBox">
+		<sample weight="1" path="scrape_wood_03.wav" />
+	</sound>
+</sounds>

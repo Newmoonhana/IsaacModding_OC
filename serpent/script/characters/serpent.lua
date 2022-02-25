@@ -37,7 +37,7 @@ function Serpent:onCache(player, cacheFlag)
 		end
 		if cacheFlag == CacheFlag.CACHE_SPEED then
 			player.MoveSpeed = player.MoveSpeed + Serpent.Stat.SPEED
-			player.Damage = player.MoveSpeed * 3
+			player.Damage = player.MoveSpeed * 2
 		end
 		if cacheFlag == CacheFlag.CACHE_LUCK then
 			player.Luck = player.Luck + Serpent.Stat.LUCK
