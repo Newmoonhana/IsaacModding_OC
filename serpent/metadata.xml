@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>serpent</name>
+    <directory>serpent</directory>
+    <id>2744944156</id>
+    <description>자캐가지고 놀라고 만든거
+
+* 리펜더스 DLC 필요
+* [REP] GiantBook API 모드 구독 필요
+
+ㅁ일반 서펀트[미완]
+Damage = Speed / 2
+
+-액티브 아이템: RNGesus
+주사위를 굴려 나온 값에 따라 이득을 보는 구조
+1: 방 안의 모든 엔티티 즉사
+2: 플레이어에게 랜덤 저주 부여(임시)
+3: 방 안에서 랜덤 좌표로 텔레포트
+4: 방 안의 모든 적 챔피언 화
+5: 방 안의 모든 적에게 공격력만큼 데미지 &amp; 크랙 스카이
+6: 방 안의 엔티티들에게서 랜덤 아이템 드롭
+7: 플레이어 근처에 랜덤 액티브 or 패시브 아이템 한 개 생성 &amp; 방 안의 모든 적 상태이상(슬로우, 자석) 부여
+8: 방 가운데에 사망진단서 생성(임시, 오버밸런스로 인해 하향 조정 예정)
+
+*나온 주사위의 값을 테이블에 추가하면서 돌릴수록 확률이 변동됨
+
+-패시브 아이템: 영혼검
+
+ㅁ알트 서펀트[미완]</description>
+    <version>1.3</version>
+    <visibility>Friends Only</visibility>
+    <tag id="Items"/>
+    <tag id="Player Characters"/>
+</metadata>

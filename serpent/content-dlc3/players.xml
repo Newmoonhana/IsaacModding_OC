@@ -1,0 +1,16 @@
+<players root="gfx/characters/costumes/" 
+         portraitroot="gfx/ui/boss/" 
+         nameimageroot="gfx/ui/boss/" 
+         bigportraitroot="gfx/ui/stage/">
+	<player name="Serpent" skin="character_serpent.png" black="2" hp="2" bombs="3"
+          nameimage="playername_serpent.png" 
+          portrait="playerportraitrep_serpent.png" 
+		  birthright="not done" 
+	 />
+	<player name="Tainted Serpent" skin="character_tainted_serpent.png" black="4" bombs="3"
+          nameimage="playername_serpent.png" 
+          portrait="playerportraitrep_tainted_serpent.png" 
+		  birthright="not done" 
+	bSkinParent="Serpent"
+	 />
+</players>
