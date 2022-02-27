@@ -26,7 +26,7 @@ local item_Sword = 579 --영혼검
 function Serpent:onCache(player, cacheFlag)
 	if Serpent:IsPlayerSerpent(player) then -- 노말 서펀트의 경우
 		if cacheFlag == CacheFlag.CACHE_DAMAGE then
-			player.Damage = player.MoveSpeed * 3
+			player.Damage = player.MoveSpeed * 2
 		end
 		if cacheFlag == CacheFlag.CACHE_SHOTSPEED then
 			player.ShotSpeed = player.ShotSpeed + Serpent.Stat.SHOTSPEED

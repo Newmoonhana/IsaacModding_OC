@@ -12,14 +12,14 @@ DEADCAT.id = 81
 
 function DEADCAT:onUpdate()
 	if hasCostume then
-		if MusicManager():GetCurrentMusicID() ~= BG and
+		if mod.Music:GetCurrentMusicID() ~= BG and
 		(mod.room:GetType() == RoomType.ROOM_NULL or
 		mod.room:GetType() == RoomType.ROOM_DEFAULT or
 		mod.room:GetType() == RoomType.ROOM_DUNGEON or
 		mod.room:GetType() == RoomType.ROOM_BOSSRUSH or
 		mod.room:GetType() == RoomType.ROOM_SACRIFICE) then
-			MusicManager():Play(BG, 0)
-			MusicManager():UpdateVolume()
+			mod.Music:Play(BG, 0)
+			mod.Music:UpdateVolume()
 		end
 	end
 end
@@ -30,35 +30,34 @@ function DEADCAT:GetDeadCat(player, hasCostume_deadcat)
 		if player:HasCollectible(DEADCAT.id) and not hasCostume_deadcat.hasCostume then
 			hasCostume_deadcat.hasCostume = true
 			hasCostume = true
+			EFFECT.ColorShader = true
 			
 			player:TryRemoveNullCostume( DEADCAT.COSTUME )
 			player:TryRemoveNullCostume( DEADCAT.COSTUME_HAIR )
 			player:AddNullCostume(DEADCAT.COSTUME)
 			player:AddNullCostume(DEADCAT.COSTUME_HAIR)
+			player:AnimateSad();
 
-			MusicManager():Play(BG, 0)
-			MusicManager():UpdateVolume()
+			-- 서펀트가 죽은 고양이 보유 시 스탯 반감
+			player.Damage = player.Damage * 0.5
+			player.ShotSpeed = player.ShotSpeed * 0.5
+			player.TearHeight = player.TearHeight * 0.5
+			player.TearFallingSpeed = player.TearFallingSpeed * 0.5
+			player.MoveSpeed = player.MoveSpeed * 0.5
+			player.Luck = player.Luck * 0.5
+
+			mod.Music:Play(BG, 0)
+			mod.Music:UpdateVolume()
 			mod.game:GetHUD():ShowFortuneText('Cat in the box!')
 			mod.SFX:Play(SoundEffect.CatInTheBox)
 		end
 	end
 end
 
-
-function mod:GetShaderParams(shaderName)
-    if shaderName == 'RandomColors' then
-		if hasCostume == true then
-			return { R = 2, G = 0.5, B = 0 }
-		else
-			return { R = 1, G = 1, B = 1 }
-		end
-    end
-end
-mod:AddCallback(ModCallbacks.MC_GET_SHADER_PARAMS, mod.GetShaderParams)
-
-function mod:PostGameStarted(isContinued)
+function DEADCAT:PostGameStarted(isContinued)
 	if isContinued == false then
 		hasCostume = false
+		EFFECT.ColorShader = false
 	end
 end
-mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, mod.PostGameStarted)
+mod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, DEADCAT.PostGameStarted)

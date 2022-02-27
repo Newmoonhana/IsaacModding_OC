@@ -10,6 +10,7 @@ mod.level:GetCurrentRoomIndex()
 mod.roomDescriptor = mod.level:GetCurrentRoomDesc()
 mod.roomConfigRoom = mod.roomDescriptor.Data
 mod.myRNG = RNG()
+mod.Music = MusicManager()
 mod.SFX = SFXManager()
 -- mod.option = Options()
 
@@ -81,6 +82,8 @@ end
 function mod:getRandomIntInclusive(min, max)
 	return mod.myRNG:RandomInt(max + 1 - min) + min
 end
+
+include('script/effect.lua')
 
 include('script/characters/serpent.lua')
 include('script/characters/tserpent.lua')
