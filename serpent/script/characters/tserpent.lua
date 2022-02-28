@@ -24,6 +24,12 @@ function TSerpent:PostPlayerInit(player)
 		if item_SpeedRunner > 0 then        --should prevent error, when the item cant be found
 			player:AddCollectible( item_SpeedRunner, 0, false )
 		end
+
+		-- 코옵 사망 시 유령으로 등장하는 거 코스튬 세팅(CustomCoopGhost 모드 필요)
+		if CustomCoopGhost then
+			CustomCoopGhost.ChangeSkin(TSerpent.type, 'tserpent')
+			CustomCoopGhost.AddCostume(TSerpent.type, 'tserpenthair')
+		end
 	end
 end
 mod:AddCallback( ModCallbacks.MC_POST_PLAYER_INIT, TSerpent.PostPlayerInit)

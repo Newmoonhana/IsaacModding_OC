@@ -118,7 +118,11 @@ function Rngesus:UseRNGesus(_Type, RNG, player)
 	if (mod:getRandomIntInclusive(1, dice_rng) == dice_rng) then -- 1/dice_rng의 확률로 테이블에 해당 값이 추가되어 해당 값이 나올 가능성이 높아진다(높은 숫자일 수록 테이블에 잘 안들어감으로써 밸런스패치)
 		table.insert(Rngesus.dice_table, dice_rng);
 	end
-	GiantBookAPI.playGiantBook("Appear", diec_img[dice_rng], Color(0.2,0.5,0.5,1,0,0,0),Color(0.5,1,1,0.5,0,0,0),Color(0.2,0.5,0.5,0.8,0,0,0), false)
+
+	-- GiantBookAPI 모드가 있을 시 나온 주사위 값 표시
+	if GiantBookAPI then
+		GiantBookAPI.playGiantBook("Appear", diec_img[dice_rng], Color(0.2,0.5,0.5,1,0,0,0),Color(0.5,1,1,0.5,0,0,0),Color(0.2,0.5,0.5,0.8,0,0,0), false)
+	end
 end
 mod:AddCallback( ModCallbacks.MC_USE_ITEM, Rngesus.UseRNGesus, Rngesus.id )
 

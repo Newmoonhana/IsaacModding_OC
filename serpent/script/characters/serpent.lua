@@ -72,6 +72,12 @@ function Serpent:PostPlayerInit(player)
 			end
 			player:AddCollectible( item_Sword, 0, false )
 		end
+
+		-- 코옵 사망 시 유령으로 등장하는 거 코스튬 세팅(CustomCoopGhost 모드 필요)
+		if CustomCoopGhost then
+			CustomCoopGhost.ChangeSkin(Serpent.type, 'serpent')
+			CustomCoopGhost.AddCostume(Serpent.type, 'serpenthair')
+		end
 	end
 end
 mod:AddCallback( ModCallbacks.MC_POST_PLAYER_INIT, Serpent.PostPlayerInit)
