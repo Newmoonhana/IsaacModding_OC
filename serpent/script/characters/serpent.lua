@@ -19,7 +19,6 @@ Serpent.Stat = -- 설정할 스탯 값(베이스를 수정은 못해서 베이�
 local hasCostume_deadcat = { hasCostume = false };
 
 -- 아이템
-local item_RNGesus = Isaac.GetItemIdByName("RNGesus") -- 아이템 체킹용 변수
 local item_Sword = 579 --영혼검
 
 -- 플레이어 캐싱
@@ -64,12 +63,17 @@ function Serpent:PostPlayerInit(player)
 		hasCostume_deadcat.hasCostume = false ;
 
 		-- 아이템 추가
-		if item_RNGesus > 0 then        --should prevent error, when the item cant be found
+		if Rngesus.id > 0 then        --should prevent error, when the item cant be found
 			if REPENTANCE then
-				player:SetPocketActiveItem( item_RNGesus, ActiveSlot.SLOT_POCKET, false)
+				player:SetPocketActiveItem( Rngesus.id, ActiveSlot.SLOT_POCKET, false)
 			else
-				player:AddCollectible( item_RNGesus, 0, 1 )
+				player:AddCollectible( Rngesus.id, 0, 1 )
 			end
+		end
+		if SpecterSword.id > 0 then
+			player:AddCollectible( SpecterSword.id, 0, false )
+		end
+		if item_Sword > 0 then
 			player:AddCollectible( item_Sword, 0, false )
 		end
 

@@ -27,7 +27,7 @@ Damage = Speed / 2
 -패시브 아이템: 영혼검
 
 ㅁ알트 서펀트[미완]</description>
-    <version>1.3</version>
+    <version>1.7</version>
     <visibility>Friends Only</visibility>
     <tag id="Items"/>
     <tag id="Player Characters"/>

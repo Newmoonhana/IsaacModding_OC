@@ -1,0 +1,12 @@
+<challenges version="1">
+	<challenge name="Taste the Rainbow"
+	startingitems="330,418,570"
+	playertype="5"
+	roomfilter="4"
+	altpath="false"
+	bigrange="true"
+	difficulty="1"
+	megasatan="true"
+	endstage="11"
+	/>
+</challenges>

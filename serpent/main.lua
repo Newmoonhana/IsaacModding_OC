@@ -85,10 +85,13 @@ end
 
 include('script/effect.lua')
 
-include('script/characters/serpent.lua')
-include('script/characters/tserpent.lua')
 include('script/items/rngesus.lua')
 include('script/items/speed runner.lua')
+include('script/items/specter sword.lua')
 include('script/items/dead cat.lua')
 
+include('script/characters/serpent.lua')
+include('script/characters/tserpent.lua')
+
+include('script/familiar.lua')
 include('script/savedata.lua')

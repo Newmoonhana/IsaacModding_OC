@@ -1,4 +1,5 @@
 <items gfxroot="gfx/items/" version="1">
 	<active name="RNGesus" description="Reroll your fate" gfx="collectibles_RNGesus.png" maxcharges="1" special="true" />
-  <passive name="Speed Runner" description="u are already dead" gfx="collectibles_SpeedRunner.png" maxcharges="0" special="true" />
+	<passive name="Speed Runner" description="u are already dead" gfx="collectibles_SpeedRunner.png" maxcharges="0" special="true" />
+  	<passive name="Specter Sword" description="슉. 슈슉" gfx="collectibles_SpecterSword.png" maxcharges="0" special="true" />
 </items>

@@ -1,0 +1,12 @@
+<challenges version="1">
+	<challenge name="BOOOOM"
+	startingitems="5,27,48,52,131,149,229,371"
+	playertype="4"
+	roomfilter="2"
+	altpath="true"
+	difficulty="1"
+	megasatan="true"
+	endstage="11a"
+	startingpill="4"
+	/>
+</challenges>

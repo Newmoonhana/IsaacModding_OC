@@ -1,0 +1,129 @@
+<music root="music/">
+	<track id="1" name="Basement" path="Marmite.ogg" loop="true" />
+	<track id="2" name="Caves" path="Bloody Beaks.ogg" loop="true" />
+	<track id="3" name="Depths" path="Savat.ogg" loop="true" />
+	<track id="4" name="Cellar" path="Druged Mj.ogg" loop="true" />
+	<track id="5" name="Catacombs" path="Settlers 7.ogg" loop="true" />
+	<track id="6" name="Necropolis" path="Lobster Loser.ogg" loop="true" />
+	<track id="7" name="Womb" path="I am ready....ogg" loop="true" />
+	<track id="8" name="Game Over" path="Medhi's Dance.ogg" loop="true" />
+	<track id="9" name="Boss" path="Matriarchy.ogg" loop="true" />
+	<track id="10" name="Cathedral" path="Temple.ogg" loop="true" />
+	<track id="11" name="Sheol" path="Reveals.ogg" loop="true" />
+	<track id="12" name="Dark Room" path="Space Station.ogg" loop="true" />
+	<track id="13" name="Chest" path="Bandana.ogg" loop="true" />
+	<track id="14" name="Burning Basement" path="Keygen 21.ogg" loop="true" />
+	<track id="15" name="Flooded Caves" path="Ballad of The Cool Fish.ogg" loop="true" />
+	<track id="16" name="Dank Depths" path="Mega 23.ogg"  loop="true" />
+	<track id="17" name="Scarred Womb" path="Communication Tower.ogg" loop="true" />
+	<track id="18" name="Blue Womb" path="Enemies Closer.ogg" loop="true" />
+	<track id="19" name="Utero" path="Into the Lab.ogg" loop="true" />
+	<track id="20" name="Boss (Depths - Mom)" path="Hundred Dollar Volvo Road Trip.ogg" loop="true" />
+	<track id="21" name="Boss (Womb - Mom's Heart)" path="Capriccio 1 In B Whatever.ogg" loop="true" />
+	<track id="22" name="Boss (Cathedral - Isaac)" path="Keygen 22.ogg" loop="true" />
+	<track id="23" name="Boss (Sheol - Satan)" path="Nefarious Crown.ogg" loop="true" />
+	<track id="24" name="Boss (Dark Room)" path="Keygen 19.ogg" loop="true" />
+	<track id="25" name="Boss (Chest - ???)" path="Keygen 23.ogg" loop="true" />
+	<track id="26" name="Boss (alternate)" path="Magical Flute.ogg" loop="true" />
+	<track id="27" name="Boss (Blue Womb - Hush)" path="Black Hat Tower.ogg" loop="true" />
+	<track id="28" name="Boss (Ultra Greed)" path="Keygen 20.ogg" loop="true" />
+	<track id="30" name="Library Room" path="MAURICE NO THEMA.ogg" loop="true" />
+	<track id="31" name="Secret Room" path="Nocturne.ogg" loop="true" />
+	<track id="32" name="Secret Room Alt" path="Codec Transmission.ogg" loop="true" />
+	<track id="33" name="Devil Room" path="Reveals.ogg" loop="true" />
+	<track id="34" name="Angel Room" path="Arckhan Legacy.ogg" loop="true" />
+	<track id="35" name="Shop Room" path="Tutorial.ogg" loop="true" />
+	<track id="36" name="Arcade Room" path="Arcade Mode.ogg" loop="true" />
+	<track id="37" name="Boss Room (empty)" path="Heroes of the Legend.ogg" loop="true" />
+	<track id="38" name="Challenge Room (fight)" path="Mountain Stage Breakaway (Bonus Track).ogg" loop="true" />
+	<track id="39" name="Boss Rush" path="Solitude.ogg" loop="true" />
+	<track id="40" name="Boss Rush (jingle)" path="JINGLE OGG/Ambush Jinle outro V3_04.ogg" loop="false" />
+<!-- REPENTANCE BEGIN -->
+	<track id="41" name="Boss (alternate alternate)" path="Love Song.ogg" loop="true" />
+	<track id="42" name="Boss Death Alternate Alternate (jingle)" path="Repentance/Alt Boss Track Jingle.ogg" loop="false" mul="2.2" />
+	
+	<track id="43" name="Boss (Mother)" path="8Bit Dojo.ogg" loop="true" mul="1.25" />
+	<track id="44" name="Boss (Dogma)" path="Bad Television.ogg" loop="true" layermode="2" layerfadespeed="0.008">
+		<layer path="" mul="1.2" />
+		<layer path="Repentance/Static.ogg" mul="1" />
+	</track>
+	<track id="45" name="Boss (Beast)" path="On The Cobbles Of Hell.ogg" loop="true" layermode="2" layerfadespeed="0.01" mul="1.5">
+		<layer path="" mul="1.5" />
+		<layer path="" mul="1.5" />
+		<layer path="" mul="1.5" />
+		<layer path="" mul="2" />
+	</track>
+	
+	<track id="47" name="Boss Mother Death (jingle)" path="Repentance/Alt Boss Track Jingle.ogg" loop="false" mul="2.2" />
+	<track id="48" name="Boss Dogma Death (jingle)" path="Repentance/Static Boss Light V2 Jingle.ogg" loop="false" mul="1.5" />
+	<track id="49" name="Boss Beast Death (jingle)" path="Repentance/Alt Boss Track Jingle.ogg" loop="false" mul="2.2" />
+	
+	<track id="50" name="Planetarium" path="Making Music On The Internet.ogg" loop="true" />
+	<track id="51" name="Secret Room Alt Alt" path="GAME OVER.ogg" loop="true" />
+	<track id="52" name="Boss Room (empty, twisted)" path="Incoming Prophecy.ogg" loop="true" mul="1.2" />
+<!-- REPENTANCE END -->
+
+	<track id="60" name="Credits" path="Credits.ogg" loop="false" />
+	<track id="61" name="Title Screen" path="Childhood.ogg" loop="true" />
+	<track id="62" name="Title Screen (Afterbirth)" path="Childhood.ogg" loop="true" />
+	
+<!-- REPENTANCE BEGIN -->
+	<track id="63" name="Title Screen (Repentance)" path="Childhood.ogg" loop="true" />
+	<track id="64" name="Game start (jingle, twisted)" path="Repentance/Title Screen Stinger MB.ogg" loop="false" />
+	<track id="65" name="Nightmare (alt)" path="Repentance/Nightmare_V4.ogg" loop="false" />
+	<track id="66" name="Mom's Shadow Intro" path="Repentance/Moms_Shadow_Cut_Scene.ogg" loop="false" />
+	<track id="67" name="Dogma Intro" path="Repentance/Dogma_static_Cut_Scene_V5.ogg" loop="false" mul="1.5" />
+	<track id="68" name="Strange Door (jingle)" path="Repentance/Genesis_SFX_Jingle.ogg" loop="false" />
+	<track id="69" name="Echoes Reverse" path="Repentance/Echoes Reverse.ogg" loop="true" />
+<!-- REPENTANCE END -->
+	
+	<track id="70" name="Credits Alt" path="" loop="false" />
+<!-- REPENTANCE BEGIN -->
+	<track id="71" name="Credits Alt Final" path="" loop="false" mul="1.9" />
+<!-- REPENTANCE END -->
+
+	<track id="81" name="Boss (jingle)" path="JINGLE OGG/Boss Fight intro jingle V2.1.ogg" loop="false" />
+	<track id="83" name="Boss Death (jingle)" path="JINGLE OGG/Boss FIght jingle OUTRO v2_12.ogg" loop="false" />
+	<track id="84" name="Holy Room Find (jingle)" path="JINGLE OGG/Angel Room Appear V2_07.ogg" loop="false" />
+	<track id="85" name="Secret Room Find (jingle)" path="JINGLE OGG/secret room find v2_07.ogg" loop="false" />
+	<track id="87" name="Treasure Room Entry (jingle) 1" path="JINGLE OGG/treasure room discoverA.ogg" loop="false" />
+	<track id="88" name="Treasure Room Entry (jingle) 2" path="JINGLE OGG/treasure room discoverB.ogg" loop="false" />
+	<track id="89" name="Treasure Room Entry (jingle) 3" path="JINGLE OGG/treasure room discoverC.ogg" loop="false" />
+	<track id="90" name="Treasure Room Entry (jingle) 4" path="JINGLE OGG/treasure room discover_03.ogg" loop="false" />
+	<track id="91" name="Challenge Room Entry (jingle)" path="" loop="false" />
+	<track id="92" name="Challenge Room Outro (jingle)" path="JINGLE OGG/Ambush Jinle outro V3_04.ogg" loop="false" />
+	<track id="93" name="Game Over (jingle)" path="" loop="false" />
+	<track id="94" name="Devil Room appear (jingle)" path="JINGLE OGG/Satan Room Appear V2_01.ogg" loop="false" />
+	<track id="95" name="Game start (jingle)" path="JINGLE OGG/Title Screen jingle V1_01.ogg" loop="false" />
+	<track id="96" name="Nightmare" path="JINGLE OGG/boss fight intro jingle_01.ogg" loop="false" />
+	<track id="97" name="Boss Death Alternate (jingle)" path="Afterbirth/Cerebrum Dispersio (boss alt) end.ogg" loop="false" />
+	<track id="98" name="Boss Hush Death (jingle)" path="Afterbirth/Morituros (dead womb boss) outro.ogg" loop="false" />
+	<track id="100" name="Intro Voiceover" path="IntroVoiceover.ogg" loop="false" />
+	<track id="101" name="Epilogue Voiceover" path="Epilogue_01m.ogg" loop="false" />
+	<track id="102" name="Void" path="Isocity.ogg" loop="true" />
+	<track id="103" name="Boss (Void)" path="Fight Ogg/Delirium Fight.ogg" loop="true" />
+<!-- REPENTANCE BEGIN -->
+	<track id="104" name="Downpour" path="Ice Land.ogg" loop="true" />
+	<track id="105" name="Mines" path="Godot Valley.ogg" loop="true" />
+	<track id="106" name="Mausoleum" path="Over The Sky.ogg" loop="true" />
+	<track id="107" name="Corpse" path="Xelivad.ogg" loop="true" />
+	<track id="108" name="Dross" path="Kurakura.ogg" loop="true" />
+	<track id="109" name="Ashpit" path="Ghost... GHOST!!!.ogg" loop="true" />
+	<track id="110" name="Gehenna" path="Game Over City.ogg" loop="true" />
+	<track id="111" name="not done" path="I am ready....ogg" loop="true" />
+	<track id="112" name="Home" path="Home.ogg" loop="true" />
+	<track id="113" name="Final Voiceover" path="Repentance/End End End VO.ogg" loop="false" />
+	<track id="114" name="Downpour (reversed)" path="Boat Interlude.ogg" loop="true" />
+	<track id="115" name="Dross (reversed)" path="Boat Interlude.ogg" loop="true" mul="1.2" />
+	<track id="116" name="Abandoned Mineshaft" path="Space Station 2.ogg" loop="true" />
+	<track id="117" name="Mineshaft Escape" path="Run Away.ogg" loop="true" />
+	<track id="118" name="Genesis (reversed)" path="Ending.ogg" loop="true" mul="1.2">
+		<layer path="" mul="1.2" />
+		<layer path="" mul="1.2" />
+		<layer path="" mul="1.2" />
+		<layer path="" mul="1.2" />
+		<layer path="" mul="1.2" />
+		<layer path="" mul="1.2" />
+	</track>
+<!-- REPENTANCE END -->
+</music>
