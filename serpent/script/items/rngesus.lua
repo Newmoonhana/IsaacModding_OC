@@ -66,9 +66,9 @@ function Rngesus:UseRNGesus(_Type, RNG, player)
 
 	local seed = mod.myRNG:GetSeed();
 	seed = mod:getRandomInt(0, seed);
-	Isaac.DebugString("[Serpent]: max =  "..#(Rngesus.dice_table))
+	DEBUGMOD:DebugValue(DEBUGMOD.type.debug, "RNGesus.lua", "RNGesus.dice_table.Length", #(Rngesus.dice_table))
 	local dice_rng_Index = math.random(#(Rngesus.dice_table)) -- dice_table의 랜덤 인덱스 값
-	Isaac.DebugString("[Serpent]: random =  "..dice_rng_Index)
+	DEBUGMOD:DebugValue(DEBUGMOD.type.debug, "RNGesus.lua", "dice_rng's random index", dice_rng_Index)
 	local dice_rng = Rngesus.dice_table[dice_rng_Index]
 	if dice_rng == 1 then -- Entity 전체 즉사(플레이어 포함)
 		for _, entity in pairs(entities) do
@@ -107,7 +107,9 @@ function Rngesus:UseRNGesus(_Type, RNG, player)
 	elseif dice_rng == 8 then
 		mod.game:Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, mod.room:GetCenterPos(), Vector(0,0), nil, DeathCertificateId, mod.myRNG:GetSeed()) -- 사망진단서 생성
 	else -- 랜덤값 오류
-		DebugString("[Serpent] dice_rng is not range! dice_rng = "..dice_rng .." / max = "..#(Rngesus.dice_table))
+		DEBUGMOD:DebugString(DEBUGMOD.type.error, "dice_rng is not range!")
+		DEBUGMOD:DebugValue(DEBUGMOD.type.error, "RNGesus.lua", "dice_rng", dice_rng)
+		DEBUGMOD:DebugValue(DEBUGMOD.type.error, "RNGesus.lua", "Rngesus.dice_table.Length", #(Rngesus.dice_table))
 	end
 
 	-- 주사위 결과가 max / 2 이상일 경우 차지 한 칸 충전

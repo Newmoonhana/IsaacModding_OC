@@ -48,7 +48,7 @@ function DEADCAT:GetDeadCat(player, hasCostume_deadcat)
 
 			mod.Music:Play(BG, 0)
 			mod.Music:UpdateVolume()
-			mod.game:GetHUD():ShowFortuneText('Cat in the box!')
+				mod.game:GetHUD():ShowFortuneText('Cat in the box!')
 			mod.SFX:Play(SoundEffect.CatInTheBox)
 		end
 	end

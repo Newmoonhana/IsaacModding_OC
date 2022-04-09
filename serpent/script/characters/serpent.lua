@@ -1,6 +1,8 @@
 Serpent = {}
 
 -- [변수]
+
+
 -- 캐릭터
 Serpent.type = Isaac.GetPlayerTypeByName('Serpent')
 Serpent.COSTUME = Isaac.GetCostumeIdByPath("gfx/characters/serpenthair.anm2")
@@ -19,6 +21,8 @@ Serpent.Stat = -- 설정할 스탯 값(베이스를 수정은 못해서 베이�
 local hasCostume_deadcat = { hasCostume = false };
 
 -- 아이템
+local RngesusId = Rngesus.id
+local SpecterSwordId = SpecterSword.id
 local item_Sword = 579 --영혼검
 
 -- 플레이어 캐싱
@@ -60,18 +64,18 @@ function Serpent:PostPlayerInit(player)
 		player:TryRemoveNullCostume( Serpent.COSTUME )
 		player:AddNullCostume(Serpent.COSTUME)
 		costumeEquipped = true
-		hasCostume_deadcat.hasCostume = false ;
+		hasCostume_deadcat.hasCostume = false
 
 		-- 아이템 추가
-		if Rngesus.id > 0 then        --should prevent error, when the item cant be found
+		if RngesusId > 0 then        --should prevent error, when the item cant be found
 			if REPENTANCE then
-				player:SetPocketActiveItem( Rngesus.id, ActiveSlot.SLOT_POCKET, false)
+				player:SetPocketActiveItem( RngesusId, ActiveSlot.SLOT_POCKET, false)
 			else
-				player:AddCollectible( Rngesus.id, 0, 1 )
+				player:AddCollectible( RngesusId, 0, 1 )
 			end
 		end
-		if SpecterSword.id > 0 then
-			player:AddCollectible( SpecterSword.id, 0, false )
+		if SpecterSwordId > 0 then
+			player:AddCollectible( SpecterSwordId, 0, false )
 		end
 		if item_Sword > 0 then
 			player:AddCollectible( item_Sword, 0, false )
@@ -97,6 +101,8 @@ end
 
 -- Update
 function Serpent:onUpdate(player)
-	DEADCAT:GetDeadCat(player, hasCostume_deadcat)
+	if hasCostume_deadcat.hasCostume == true then
+		DEADCAT:GetDeadCat(player, hasCostume_deadcat)
+	end
 end
 mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, Serpent.onUpdate)

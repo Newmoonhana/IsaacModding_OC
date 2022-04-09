@@ -1,6 +1,8 @@
 TSerpent = {}
 
 -- [변수]
+
+
 -- 캐릭터
 TSerpent.type = Isaac.GetPlayerTypeByName('Tainted Serpent')
 if REPENTANCE then
@@ -10,7 +12,7 @@ TSerpent.COSTUME = Isaac.GetCostumeIdByPath("gfx/characters/tainted_serpenthair.
 local hasCostume_deadcat = { hasCostume = false };
 
 -- 아이템
-local item_SpeedRunner = Isaac.GetItemIdByName("Speed Runner") -- 아이템 체킹용 변수
+local SpeedRunnerId = SpeedRunner.id
 
 -- 플레이어 생성자
 function TSerpent:PostPlayerInit(player)
@@ -18,11 +20,11 @@ function TSerpent:PostPlayerInit(player)
 		player:TryRemoveNullCostume( TSerpent.COSTUME )
 		player:AddNullCostume(TSerpent.COSTUME)
 		costumeEquipped = true
-		hasCostume_deadcat.hasCostume = false ;
+		hasCostume_deadcat.hasCostume = false
 
 		-- 아이템 추가
-		if item_SpeedRunner > 0 then        --should prevent error, when the item cant be found
-			player:AddCollectible( item_SpeedRunner, 0, false )
+		if SpeedRunnerId > 0 then        --should prevent error, when the item cant be found
+			player:AddCollectible( SpeedRunnerId, 0, false )
 		end
 
 		-- 코옵 사망 시 유령으로 등장하는 거 코스튬 세팅(CustomCoopGhost 모드 필요)
@@ -45,6 +47,8 @@ end
 
 -- Update
 function TSerpent:onUpdate(player)
-	DEADCAT:GetDeadCat(player, hasCostume_deadcat)
+	if hasCostume_deadcat.hasCostume == true then
+		DEADCAT:GetDeadCat(player, hasCostume_deadcat)
+	end
 end
 mod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, TSerpent.onUpdate)

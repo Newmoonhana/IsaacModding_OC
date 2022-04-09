@@ -1,4 +1,4 @@
-local SpeedRunner = {}
+SpeedRunner = {}
 
 -- [º¯¼ö]
 SpeedRunner.id = Isaac.GetItemIdByName('Speed Runner')

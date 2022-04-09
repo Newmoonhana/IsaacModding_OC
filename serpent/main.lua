@@ -2,10 +2,13 @@
 
 mod = RegisterMod("Serpent",1) -- Register the mod
 
+include('script/debugmod.lua')
+DEBUGMOD:DebugString(DEBUGMOD.type.debug, "Serpent Mod Is Enable!")
+
 -- [변수]
 mod.game = Game()
 mod.room = mod.game:GetRoom()
-mod.level = Game():GetLevel()
+mod.level = mod.game:GetLevel()
 mod.level:GetCurrentRoomIndex()
 mod.roomDescriptor = mod.level:GetCurrentRoomDesc()
 mod.roomConfigRoom = mod.roomDescriptor.Data
@@ -14,42 +17,7 @@ mod.Music = MusicManager()
 mod.SFX = SFXManager()
 -- mod.option = Options()
 
-mod.debug = true
 
--- [모드 설정]
-mod.ModCallbacks = {
-		MC_CONVERT_HEARTS = 0,
-		MC_MORPH_TEAR = 1,
-		MC_TELEKINESIS_VALIDITY = 3,
-		MC_REFRESH_TEAR_SPRITE = 5
-	}
-local modCallbacks = {}
--- This function returns a key that can be used to remove the mod callback.	/	이 함수는 모드 콜백을 제거하는 데 사용할 수 있는 키를 반환합니다
--- If nil was returned, the callback was not successfully added.	/	0이 반환되면 콜백이 성공적으로 추가되지 않은 것입니다
-function mod:AddModCallback(callbackId,callback,...)
-	if callbackId == nil then
-		error("[Serpent] Callback Id invalid")
-	end
-	if type(callback) == "function" then
-		if modCallbacks[callbackId] == nil then
-			modCallbacks[callbackId] = {}
-		end
-		table.insert(modCallbacks[callbackId],callback)
-		local key = #modCallbacks[callbackId]-1
-		Isaac.DebugString("[Serpent]: Mod callback added for ID "..callbackId.." with key "..key)
-		return key
-	end
-	return nil
-end
-
--- This function takes the key that AddModCallback returned to remove the the mod callback	/	이 함수는 AddModCallback이 모드 콜백을 제거하기 위해 반환한 키를 사용합니다
--- main.lua에선 쓰이는 곳이 안보이는데 중요해보여서 일단 가져옴
-function mod:RemoveModCallback(callbackId,key)
-	if modCallbacks[callbackId] ~= nil then
-		Isaac.DebugString("[Serpent]: Mod callback remove for ID "..callbackId.." with key "..key)
-		modCallbacks[callbackId][key] = -1
-	end
-end
 
 -- 멀티 플레이 용 GetPlayer(다인 플레이어)
 function mod:GetPlayers()
