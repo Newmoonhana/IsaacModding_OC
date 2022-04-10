@@ -17,7 +17,9 @@ mod.Music = MusicManager()
 mod.SFX = SFXManager()
 -- mod.option = Options()
 
-
+mod.ZeroVector = Vector(0, 0)
+mod.Direction = { Up = Vector(0, -1), Left = Vector(-1, 0), Down = Vector(0, 1), Right = Vector(1, 0),
+					UpLeft = Vector(-1, -1), UpRight = Vector(1, -1), DownLeft = Vector(-1, 1), DownRight = Vector(1, 1) }
 
 -- 멀티 플레이 용 GetPlayer(다인 플레이어)
 function mod:GetPlayers()
